@@ -36,5 +36,22 @@ namespace MSTestLinkedList
             int result = list.GetIndex(data);
             Assert.AreEqual(expected, result);
         }
+
+        //Test case for Deletion
+        [TestMethod]
+        [DataRow(20)]
+        [DataRow(40)]
+        public void TestMethodDeleteData(int data)
+        {
+            LinkedList list = new LinkedList();
+            list.Add(10);
+            list.Add(20);
+            list.Add(30);
+            list.Remove(data);
+            int result = list.CountItems();
+            int expected = 2;
+            Assert.AreEqual(expected, result);
+        }
+
     }
 }

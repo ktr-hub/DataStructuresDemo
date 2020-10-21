@@ -28,6 +28,38 @@ namespace DataStructuresDemo
             Console.WriteLine("Item Added to Linked List : " + node.data);
         }
 
+        //Deleting data 
+        public void Remove(int data)
+        {
+            Node temp = head;
+            Node tempPrev = head;
+            bool dataFound = false;
+            if (head.data == data)
+            {
+                Console.WriteLine("\nDeleting data : " + head.data);
+                dataFound = true;
+                head = head.next;
+            }
+            else {
+                while (temp != null)
+                {
+                    if (temp.data == data)
+                    {
+                        Console.WriteLine("\nDeleting data : " + temp.data);
+                        tempPrev.next = tempPrev.next.next;
+                        dataFound = true;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+            }
+            if (dataFound == false)
+            {
+                Console.WriteLine("No data found");
+            }
+        }
+
+
         //Adding data in between nodes
         public void InsertAtParticularPositon(int position, int data)
         {
@@ -65,7 +97,7 @@ namespace DataStructuresDemo
         }
 
         //Get Count of items inside LinkedList
-        internal int CountItems()
+        public int CountItems()
         {
             Node temp = this.head;
             if (temp == null)

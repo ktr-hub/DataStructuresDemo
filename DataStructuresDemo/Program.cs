@@ -24,6 +24,10 @@ namespace DataStructuresDemo
             list.Display();
             Console.WriteLine("\nCount of items is : " + list.CountItems());
 
+            list.Remove(90);
+            list.Display();
+            Console.WriteLine("\nCount of items is : " + list.CountItems());
+
         }
     }
 }
