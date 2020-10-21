@@ -70,7 +70,6 @@ namespace DataStructuresDemo
             }
             else
             {
-                Console.WriteLine("Linked list items : ");
                 int count = 0;
                 while (temp != null)
                 {
@@ -87,16 +86,29 @@ namespace DataStructuresDemo
             Node temp = this.head;
             if (temp == null)
             {
-                Console.WriteLine("No data");
+                Console.WriteLine("\nNo data");
             }
             else
             {
-                Console.WriteLine("Linked list items : ");
+                Console.WriteLine("\nLinked list items : ");
                 while(temp!=null)
                 {
                     Console.Write(temp.data + " ");
                     temp = temp.next;
                 }
+            }
+        }
+
+        internal void Pop()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("\nNo data to pop");
+            }
+            else
+            {
+                Console.WriteLine("\nDeleting : " + this.head.data);
+                this.head = this.head.next;
             }
         }
 
