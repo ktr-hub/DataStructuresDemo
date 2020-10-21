@@ -29,7 +29,7 @@ namespace DataStructuresDemo
         }
 
         //Adding data in between nodes
-        internal void InsertAtParticularPositon(int position, int data)
+        public void InsertAtParticularPositon(int position, int data)
         {
             if (position < 1)
             {
@@ -43,6 +43,10 @@ namespace DataStructuresDemo
 
                 //Assigning head to the new node as it became first data
                 head = newNode;
+            }
+            else if (position > this.CountItems()+1)
+            {
+                Console.WriteLine("Invalid position");
             }
             else
             {
