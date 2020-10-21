@@ -12,7 +12,9 @@ namespace DataStructuresDemo
             list.Add(56);
             list.Add(90);
             list.Add(100);
+            list.InsertAtParticularPositon(3, 99);
             list.Display();
+            Console.WriteLine("\nCount of items is : "+list.CountItems());
         }
     }
 }

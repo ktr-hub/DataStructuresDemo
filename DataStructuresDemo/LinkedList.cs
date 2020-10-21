@@ -28,6 +28,58 @@ namespace DataStructuresDemo
             Console.WriteLine("Item Added to Linked List : " + node.data);
         }
 
+        //Adding data in between nodes
+        internal void InsertAtParticularPositon(int position, int data)
+        {
+            if (position < 1)
+            {
+                Console.WriteLine("Invalid position");
+            }
+            else if (position == 1)
+            {
+                var newNode = new Node(data);
+                //Adding node at beginning
+                newNode.next = this.head;
+
+                //Assigning head to the new node as it became first data
+                head = newNode;
+            }
+            else
+            {
+                Node temp = head;
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        Node node = new Node(data);
+                        node.next = temp.next;
+                        temp.next = node;
+                    }
+                    temp = temp.next;
+                }
+            }
+        }
+
+        //Get Count of items inside LinkedList
+        internal int CountItems()
+        {
+            Node temp = this.head;
+            if (temp == null)
+            {
+                return 0;
+            }
+            else
+            {
+                Console.WriteLine("Linked list items : ");
+                int count = 0;
+                while (temp != null)
+                {
+                    temp = temp.next;
+                    count++;
+                }
+                return count;
+            }
+        }
 
         //Viewing data in Linked List
         internal void Display()
