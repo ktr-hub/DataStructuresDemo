@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DataStructuresDemo
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -12,7 +12,8 @@ namespace DataStructuresDemo
             list.Add(56);
             list.Add(90);
             list.Add(100);
-            list.InsertAtParticularPositon(3, 99);
+            int index = list.GetIndex(56);
+            list.InsertAtParticularPositon(index+1, 99);
             list.Display();
             Console.WriteLine("\nCount of items is : " + list.CountItems());
             list.Pop();
@@ -22,15 +23,6 @@ namespace DataStructuresDemo
             list.PopLast();
             list.Display();
             Console.WriteLine("\nCount of items is : " + list.CountItems());
-
-            list.PopLast();
-            list.Display();
-            Console.WriteLine("\nCount of items is : " + list.CountItems());
-
-            list.Pop();
-            list.Display();
-            Console.WriteLine("\nCount of items is : " + list.CountItems());
-
 
         }
     }

@@ -9,7 +9,7 @@ namespace DataStructuresDemo
         internal Node head;
 
         //Adding data into Linked List
-        internal void Add(int data)
+        public void Add(int data)
         {
             Node node = new Node(data);
             if (this.head == null)
@@ -113,6 +113,30 @@ namespace DataStructuresDemo
             }
         }
 
+        //To get index of first occurrence of a specific data in the linked list
+        public int GetIndex(int data)
+        {
+            if (head == null)
+            {
+                return -1;
+            }
+            else
+            {
+                int count = 1;
+                Node temp = head;
+                while (temp != null)
+                {
+                    if (temp.data == data)
+                    {
+                        return count;
+                    }
+                    count++;
+                    temp = temp.next;
+                }
+                return -1;
+            }
+        }
+
         //Popping start element UC-6
         internal void PopLast()
         {
@@ -120,27 +144,25 @@ namespace DataStructuresDemo
             {
                 Console.WriteLine("\nNo data to pop");
             }
+            //If only head is the last node
+            else if (head.next == null)
+            {
+                Console.WriteLine("\nDeleting the Last Data: " + head.data);
+                head = null;
+            }
             else
             {
                 Node tempPrev = head;
                 Node temp = head;
-                //If only head is the last node
-                if (temp.next == null)
+
+                while (temp.next != null)
                 {
-                    Console.WriteLine("\nDeleting the Last Data: " + temp.data);
-                    head = null;
+                    tempPrev = temp;
+                    temp = temp.next;
                 }
-                else
-                {
-                    while (temp.next != null)
-                    {
-                        tempPrev = temp;
-                        temp = temp.next;
-                    }
-                    Console.WriteLine("\nDeleting the Last Data: " + temp.data);
-                    tempPrev.next = null;
-                }
-            }
+                Console.WriteLine("\nDeleting the Last Data: " + temp.data);
+                tempPrev.next = null;
+            } 
         }
 
     }
