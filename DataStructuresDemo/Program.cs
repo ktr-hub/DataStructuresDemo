@@ -19,6 +19,19 @@ namespace DataStructuresDemo
             list.Display();
             Console.WriteLine("\nCount of items is : " + list.CountItems());
 
+            list.PopLast();
+            list.Display();
+            Console.WriteLine("\nCount of items is : " + list.CountItems());
+
+            list.PopLast();
+            list.Display();
+            Console.WriteLine("\nCount of items is : " + list.CountItems());
+
+            list.Pop();
+            list.Display();
+            Console.WriteLine("\nCount of items is : " + list.CountItems());
+
+
         }
     }
 }

@@ -99,6 +99,7 @@ namespace DataStructuresDemo
             }
         }
 
+        //Popping start element UC-5 
         internal void Pop()
         {
             if (this.head == null)
@@ -107,8 +108,38 @@ namespace DataStructuresDemo
             }
             else
             {
-                Console.WriteLine("\nDeleting : " + this.head.data);
+                Console.WriteLine("\nDeleting the first Data : " + this.head.data);
                 this.head = this.head.next;
+            }
+        }
+
+        //Popping start element UC-6
+        internal void PopLast()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("\nNo data to pop");
+            }
+            else
+            {
+                Node tempPrev = head;
+                Node temp = head;
+                //If only head is the last node
+                if (temp.next == null)
+                {
+                    Console.WriteLine("\nDeleting the Last Data: " + temp.data);
+                    head = null;
+                }
+                else
+                {
+                    while (temp.next != null)
+                    {
+                        tempPrev = temp;
+                        temp = temp.next;
+                    }
+                    Console.WriteLine("\nDeleting the Last Data: " + temp.data);
+                    tempPrev.next = null;
+                }
             }
         }
 
